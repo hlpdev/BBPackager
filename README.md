@@ -1,7 +1,6 @@
 # BB Packager
 
-<img src="https://img.shields.io/github/v/release/hlpdev/BBPackager" alt=""> <img src="https://img.shields.io/badge/dotnet-9.0-%234e2acd?label=dotnet
-" alt=""> <img src="https://img.shields.io/badge/Blitz%20Version-Blitz3D%20TSS-%23ead65d?label=blitz version" alt="">
+<img src="https://img.shields.io/github/v/release/hlpdev/BBPackager" alt=""> <img src="https://img.shields.io/badge/dotnet-9.0-%234e2acd?label=dotnet" alt=""> <img src="https://img.shields.io/badge/Blitz%20Version-Blitz3D%20TSS-%23ead65d?label=blitz version" alt="">
 
 ## About
 I am a developer for a somewhat popular game using Blitz3D and I got kind of sick 
