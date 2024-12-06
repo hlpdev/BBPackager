@@ -36,12 +36,12 @@ partial class Installer {
         label2 = new System.Windows.Forms.Label();
         label1 = new System.Windows.Forms.Label();
         View2 = new System.Windows.Forms.TabPage();
-        label3 = new System.Windows.Forms.Label();
-        InstallProgressBar = new System.Windows.Forms.ProgressBar();
         InstallLogs = new System.Windows.Forms.TextBox();
+        InstallProgressBar = new System.Windows.Forms.ProgressBar();
+        label3 = new System.Windows.Forms.Label();
         View3 = new System.Windows.Forms.TabPage();
-        label4 = new System.Windows.Forms.Label();
         CloseButton = new System.Windows.Forms.Button();
+        label4 = new System.Windows.Forms.Label();
         ViewController.SuspendLayout();
         View1.SuspendLayout();
         View2.SuspendLayout();
@@ -53,10 +53,10 @@ partial class Installer {
         ViewController.Controls.Add(View1);
         ViewController.Controls.Add(View2);
         ViewController.Controls.Add(View3);
-        ViewController.Location = new System.Drawing.Point(-4, 0);
+        ViewController.Location = new System.Drawing.Point(-4, -31);
         ViewController.Name = "ViewController";
         ViewController.SelectedIndex = 0;
-        ViewController.Size = new System.Drawing.Size(455, 203);
+        ViewController.Size = new System.Drawing.Size(455, 238);
         ViewController.TabIndex = 0;
         // 
         // View1
@@ -70,7 +70,7 @@ partial class Installer {
         View1.Location = new System.Drawing.Point(4, 24);
         View1.Name = "View1";
         View1.Padding = new System.Windows.Forms.Padding(3);
-        View1.Size = new System.Drawing.Size(447, 175);
+        View1.Size = new System.Drawing.Size(447, 210);
         View1.TabIndex = 0;
         View1.Text = "View1";
         View1.UseVisualStyleBackColor = true;
@@ -141,26 +141,10 @@ partial class Installer {
         View2.Location = new System.Drawing.Point(4, 24);
         View2.Name = "View2";
         View2.Padding = new System.Windows.Forms.Padding(3);
-        View2.Size = new System.Drawing.Size(447, 175);
+        View2.Size = new System.Drawing.Size(447, 210);
         View2.TabIndex = 1;
         View2.Text = "View2";
         View2.UseVisualStyleBackColor = true;
-        // 
-        // label3
-        // 
-        label3.Location = new System.Drawing.Point(14, 14);
-        label3.Name = "label3";
-        label3.Size = new System.Drawing.Size(419, 20);
-        label3.TabIndex = 0;
-        label3.Text = "Installing...";
-        // 
-        // InstallProgressBar
-        // 
-        InstallProgressBar.Location = new System.Drawing.Point(14, 37);
-        InstallProgressBar.Name = "InstallProgressBar";
-        InstallProgressBar.Size = new System.Drawing.Size(419, 27);
-        InstallProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-        InstallProgressBar.TabIndex = 1;
         // 
         // InstallLogs
         // 
@@ -171,6 +155,22 @@ partial class Installer {
         InstallLogs.Size = new System.Drawing.Size(419, 83);
         InstallLogs.TabIndex = 2;
         // 
+        // InstallProgressBar
+        // 
+        InstallProgressBar.Location = new System.Drawing.Point(14, 37);
+        InstallProgressBar.Name = "InstallProgressBar";
+        InstallProgressBar.Size = new System.Drawing.Size(419, 27);
+        InstallProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+        InstallProgressBar.TabIndex = 1;
+        // 
+        // label3
+        // 
+        label3.Location = new System.Drawing.Point(14, 14);
+        label3.Name = "label3";
+        label3.Size = new System.Drawing.Size(419, 20);
+        label3.TabIndex = 0;
+        label3.Text = "Installing...";
+        // 
         // View3
         // 
         View3.Controls.Add(CloseButton);
@@ -178,19 +178,10 @@ partial class Installer {
         View3.Location = new System.Drawing.Point(4, 24);
         View3.Name = "View3";
         View3.Padding = new System.Windows.Forms.Padding(3);
-        View3.Size = new System.Drawing.Size(447, 175);
+        View3.Size = new System.Drawing.Size(447, 210);
         View3.TabIndex = 2;
         View3.Text = "View3";
         View3.UseVisualStyleBackColor = true;
-        // 
-        // label4
-        // 
-        label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        label4.Location = new System.Drawing.Point(12, 13);
-        label4.Name = "label4";
-        label4.Size = new System.Drawing.Size(418, 22);
-        label4.TabIndex = 0;
-        label4.Text = "The installation has completed.";
         // 
         // CloseButton
         // 
@@ -201,11 +192,20 @@ partial class Installer {
         CloseButton.Text = "Close";
         CloseButton.UseVisualStyleBackColor = true;
         // 
+        // label4
+        // 
+        label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)0));
+        label4.Location = new System.Drawing.Point(12, 13);
+        label4.Name = "label4";
+        label4.Size = new System.Drawing.Size(418, 22);
+        label4.TabIndex = 0;
+        label4.Text = "The installation has completed.";
+        // 
         // Installer
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(447, 199);
+        ClientSize = new System.Drawing.Size(447, 166);
         Controls.Add(ViewController);
         FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         MaximizeBox = false;

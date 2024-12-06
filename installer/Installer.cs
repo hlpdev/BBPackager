@@ -92,10 +92,15 @@ public partial class Installer : Form {
             await Log("Setting environment variables...");
 
             string existingValue = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine)!;
-            existingValue += @";C:\Program Files (x86)\bbpackager";
-            Environment.SetEnvironmentVariable("PATH", existingValue, EnvironmentVariableTarget.Machine);
 
-            await Log("Set environment variable.");
+            if (!existingValue.Contains(@"C:\Program Files (x86)\bbpackager")) {
+                existingValue += @";C:\Program Files (x86)\bbpackager";
+                Environment.SetEnvironmentVariable("PATH", existingValue, EnvironmentVariableTarget.Machine);
+
+                await Log("Set environment variable.");
+            } else {
+                await Log("Environment variable already set. Skipping...");
+            }
         }
 
         await UpdateProgressBar(98);

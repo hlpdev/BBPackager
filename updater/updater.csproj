@@ -8,6 +8,8 @@
         <Nullable>enable</Nullable>
         <PublishAot>true</PublishAot>
         <InvariantGlobalization>true</InvariantGlobalization>
+        <PublishSingleFile>true</PublishSingleFile>
+        <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     </PropertyGroup>
 
 </Project>
