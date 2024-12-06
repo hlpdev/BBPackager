@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b128261a-bbdc-48e4-a892-7b2f4a43a4c7" name="Changes" comment="added update check">
+    <list default="true" id="b128261a-bbdc-48e4-a892-7b2f4a43a4c7" name="Changes" comment="fixed installer and packager">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bbpackager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bbpackager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updater/updater.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/updater/updater.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/installer/Installer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/installer/Installer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/installer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/installer/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updater/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/updater/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +42,10 @@
     <setting file="mock://D:/bbpackager/bbpackager/Arguments.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/bbpackager/Arguments.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/bbpackager/Entry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/bbpackager/bbpackager/Entry.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/bbpackager/installer/Installer.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/bbpackager/installer/Installer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/bbpackager/installer/Installer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/installer/Installer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/updater/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -70,7 +76,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.updater">
+  <component name="RunManager" selected=".NET Project.installer">
     <configuration name="bbpackager" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -139,7 +145,7 @@
       <workItem from="1733431666881" duration="1912000" />
       <workItem from="1733433864558" duration="75000" />
       <workItem from="1733434020811" duration="1218000" />
-      <workItem from="1733435247472" duration="6234000" />
+      <workItem from="1733435247472" duration="7846000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0.0">
       <option name="closed" value="true" />
@@ -165,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733449471549</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed installer and packager">
+      <option name="closed" value="true" />
+      <created>1733449904401</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733449904401</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +192,7 @@
     <MESSAGE value="v1.0.0.0" />
     <MESSAGE value="created installer and updater" />
     <MESSAGE value="added update check" />
-    <option name="LAST_COMMIT_MESSAGE" value="added update check" />
+    <MESSAGE value="fixed installer and packager" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed installer and packager" />
   </component>
 </project>

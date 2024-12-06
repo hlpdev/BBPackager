@@ -1,4 +1,5 @@
 using System.IO.Compression;
+using System.Text;
 using Microsoft.Win32;
 
 namespace installer;
@@ -47,9 +48,11 @@ public partial class Installer : Form {
         
         await UpdateProgressBar(1);
         HttpClient httpClient = new HttpClient();
-        Stream bbPackagerStream =
-            await httpClient.GetStreamAsync(
+        byte[] bbPackagerData =
+            await httpClient.GetByteArrayAsync(
                 "https://github.com/hlpdev/bbpackager/releases/latest/download/installer-contents.zip");
+        string bbpackagerDataPath = Path.Combine(Path.GetTempPath(), "bbpackagerinstallcontents.zip");
+        await File.WriteAllBytesAsync(bbpackagerDataPath, bbPackagerData);
         await UpdateProgressBar(55);
         await Log("Downloaded bbpackager binaries.");
 
@@ -69,8 +72,7 @@ public partial class Installer : Form {
 
         await Task.Delay(500);
         
-        var bbPackagerArchive = new ZipArchive(bbPackagerStream);
-        bbPackagerArchive.ExtractToDirectory(@"C:\Program Files (x86)\bbpackager");
+        ZipFile.ExtractToDirectory(bbpackagerDataPath, @"C:\Program Files (x86)\bbpackager");
         await UpdateProgressBar(85);
         await Log("Extracted to install directory.");
 

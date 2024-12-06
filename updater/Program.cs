@@ -10,9 +10,10 @@ public static class Program {
         Log("Downloading bbpackager binaries...");
         
         HttpClient httpClient = new HttpClient();
-        Stream bbPackagerStream =
-            await httpClient.GetStreamAsync(
+        byte[] bbPackagerData =
+            await httpClient.GetByteArrayAsync(
                 "https://github.com/hlpdev/bbpackager/releases/latest/download/installer-contents.zip");
+        string bbpackagerDataPath = Path.Combine(Path.GetTempPath(), "bbpackagerinstallcontents.zip");
 
         Log("Downloaded bbpackager binaries.");
 
@@ -29,8 +30,7 @@ public static class Program {
         
         Log("Extracting to install directory...");
         
-        var bbPackagerArchive = new ZipArchive(bbPackagerStream);
-        bbPackagerArchive.ExtractToDirectory(@"C:\Program Files (x86)\bbpackager");
+        ZipFile.ExtractToDirectory(bbpackagerDataPath, @"C:\Program Files (x86)\bbpackager");
 
         Log("Extracted to install directory.");
 
