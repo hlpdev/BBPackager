@@ -1,4 +1,5 @@
 using System.IO.Compression;
+using Microsoft.Win32;
 
 namespace installer;
 
@@ -55,6 +56,10 @@ public partial class Installer : Form {
         await Log("Creating install directory...");
         
         await Task.Delay(500);
+
+        if (Directory.Exists(@"C:\Program Files (x86)\bbpackager")) {
+            Directory.Delete(@"C:\Program Files (x86)\bbpackager");
+        }
         
         Directory.CreateDirectory(@"C:\Program Files (x86)\bbpackager");
         await UpdateProgressBar(65);
@@ -93,9 +98,16 @@ public partial class Installer : Form {
             await Log("Set environment variable.");
         }
 
-        await UpdateProgressBar(100);
+        await UpdateProgressBar(98);
+
+        await Log("Finalizing registry information...");
+        RegistryKey key = Registry.LocalMachine.OpenSubKey("Software", true)!;
+        key = key.CreateSubKey("bbpackager");
+        key.SetValue("InstallPath", @"C:\Program Files (x86)\bbpackager");
+        key.SetValue("Version", await File.ReadAllTextAsync(@"C:\Program Files (x86)\bbpackager\version.txt"));
 
         await Log("Installation completed.");
+        await UpdateProgressBar(100);
         
         await Task.Delay(2000);
         

@@ -4,8 +4,11 @@ using CommandLine;
 namespace bbpackager;
 
 internal class Arguments {
-    [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
+    [Option('l', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
     public bool Verbose { get; set; }
+
+    [Option('v', "version", Required = false, HelpText = "Prints the current version of bbpackager.")]
+    public bool DisplayVersion { get; set; }
 
     [Option('d', "directory", Required = false, HelpText = "Specify the project directory.")]
     public string? ProjectDirectory { get; set; }

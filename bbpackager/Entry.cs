@@ -1,7 +1,9 @@
 ﻿using System.Diagnostics;
 using System.IO.Compression;
+using System.Reflection;
 using System.Text;
 using CommandLine;
+using Microsoft.Win32;
 using Tomlet;
 
 namespace bbpackager;
@@ -23,6 +25,12 @@ public static class Entry {
         ProjectDirectory = options.ProjectDirectory ?? Directory.GetCurrentDirectory();
         ProjectFile = options.ProjectFile ?? "project.toml";
 
+        if (options.DisplayVersion) {
+            Logger.Log("BBPackager (C) 2024 HNT8");
+            Logger.Log(Assembly.GetExecutingAssembly().GetName().Version!.ToString());
+            Environment.Exit(0);
+        }
+        
         if (options.Init) {
             await InitializeEmptyProject();
             Environment.Exit(0);
@@ -157,8 +165,19 @@ public static class Entry {
         }
 
         Logger.Verbose("Overwriting executable resource information...");
-        ExeResourceWriter.ChangeData(Path.Combine(ProjectDirectory, Project.BuildDirectory, Project.BinaryName),
-            Project.Title, Project.Version, Project.Copyright, Project.Designation, Project.Company);
+
+#pragma warning disable CA1416
+        string installPath = (Registry.LocalMachine.OpenSubKey("Software")!.OpenSubKey("bbpackager")!.GetValue("InstallPath") as string)!;
+#pragma warning restore CA1416
+
+        Process.Start(Path.Combine(installPath, "rcedit-x86.exe"), [
+            $"\"{Path.Combine(ProjectDirectory, Project.BuildDirectory, Project.BinaryName)}\"",
+            "--set-file-version", Project.Version,
+            "--set-product-version", $"\"{Project.Version} {Project.Designation}\"",
+            "--set-version-string", $"\"LegalCopyright\" \"{Project.Copyright}\"",
+            "--set-version-string", $"\"ProductName\" \"{Project.Title}\"",
+            "--set-version-string", $"\"Company\" \"{Project.Company}\"",
+        ]);
 
         Logger.Log("Successfully built project!");
         
