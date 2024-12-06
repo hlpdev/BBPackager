@@ -2,8 +2,10 @@
 using System.IO.Compression;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using CommandLine;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using Tomlet;
 
 namespace bbpackager;
@@ -25,6 +27,26 @@ public static class Entry {
         ProjectDirectory = options.ProjectDirectory ?? Directory.GetCurrentDirectory();
         ProjectFile = options.ProjectFile ?? "project.toml";
 
+        try {
+            HttpClient httpClient = new HttpClient();
+            
+            string responseString = await httpClient.GetStringAsync("https://api.github.com/repos/hlpdev/BBPackager/releases/latest");
+            dynamic? response = JsonConvert.DeserializeObject(responseString);
+
+            if (Assembly.GetExecutingAssembly().GetName().Version!.ToString() != response.tag_name!) {
+                Logger.Warn("You are running an outdated version of BBPackager.");
+                Logger.Warn($"You are running {Assembly.GetExecutingAssembly().GetName().Version!.ToString()} while the latest version is {response.tag_name}.");
+                Logger.Warn("Update by running \"bbpackager --update\"");
+            }
+        } catch {
+            // ignored
+        }
+
+        if (options.ShouldUpdate) {
+            Process.Start(@"C:\Program Files (x86)\bbpackager\updater.exe");
+            Environment.Exit(0);
+        }
+        
         if (options.DisplayVersion) {
             Logger.Log("BBPackager (C) 2024 HNT8");
             Logger.Log(Assembly.GetExecutingAssembly().GetName().Version!.ToString());

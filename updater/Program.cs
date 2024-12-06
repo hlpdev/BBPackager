@@ -18,11 +18,12 @@ public static class Program {
 
         Log("Creating install directory...");
 
-        if (Directory.Exists(@"C:\Program Files (x86)\bbpackager")) {
-            Directory.Delete(@"C:\Program Files (x86)\bbpackager");
+        string[] files = Directory.GetFiles(@"C:\Program Files (x86)\bbpackager\").Where(f => f != "updater.exe")
+            .ToArray();
+
+        foreach (string file in files) {
+            Directory.Delete(file, false);
         }
-        
-        Directory.CreateDirectory(@"C:\Program Files (x86)\bbpackager");
 
         Log("Created install directory.");
         

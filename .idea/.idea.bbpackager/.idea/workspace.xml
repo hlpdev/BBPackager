@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b128261a-bbdc-48e4-a892-7b2f4a43a4c7" name="Changes" comment="v1.0.0.0">
-      <change beforePath="$PROJECT_DIR$/bbpackager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/bbpackager.sln" afterDir="false" />
+    <list default="true" id="b128261a-bbdc-48e4-a892-7b2f4a43a4c7" name="Changes" comment="created installer and updater">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.bbpackager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bbpackager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bbpackager/Arguments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/bbpackager/Arguments.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bbpackager/Entry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/bbpackager/Entry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bbpackager/ExeResourceWriter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/installer/Installer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/installer/Installer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updater/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/updater/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +25,23 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "hlpdev"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/hlpdev/BBPackager",
+    "accountId": "530d6ce5-a2b4-490b-aae6-aa367116cae9"
+  }
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/bbpackager/bbpackager/Arguments.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/bbpackager/bbpackager/Arguments.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/bbpackager/installer/Installer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -123,7 +139,7 @@
       <workItem from="1733431666881" duration="1912000" />
       <workItem from="1733433864558" duration="75000" />
       <workItem from="1733434020811" duration="1218000" />
-      <workItem from="1733435247472" duration="4648000" />
+      <workItem from="1733435247472" duration="5913000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0.0">
       <option name="closed" value="true" />
@@ -133,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733437122341</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="created installer and updater">
+      <option name="closed" value="true" />
+      <created>1733448742009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733448742009</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +168,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="v1.0.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0.0.0" />
+    <MESSAGE value="created installer and updater" />
+    <option name="LAST_COMMIT_MESSAGE" value="created installer and updater" />
   </component>
 </project>

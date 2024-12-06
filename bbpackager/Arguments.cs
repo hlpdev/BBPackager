@@ -10,6 +10,9 @@ internal class Arguments {
     [Option('v', "version", Required = false, HelpText = "Prints the current version of bbpackager.")]
     public bool DisplayVersion { get; set; }
 
+    [Option('u', "update", Required = false, HelpText = "Updates BB packager.")]
+    public bool ShouldUpdate { get; set; }
+
     [Option('d', "directory", Required = false, HelpText = "Specify the project directory.")]
     public string? ProjectDirectory { get; set; }
 
