@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b128261a-bbdc-48e4-a892-7b2f4a43a4c7" name="Changes" comment="fixed installer and packager">
+    <list default="true" id="b128261a-bbdc-48e4-a892-7b2f4a43a4c7" name="Changes" comment="installer and updater fixes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bbpackager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bbpackager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/installer/Installer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/installer/Installer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/installer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/installer/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updater/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/updater/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bbpackager.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/bbpackager.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bbpackager/Entry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/bbpackager/Entry.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7a7e1a6bfc927c5ef485364da488febc2fdcf16347af288cf5916c295d3f0/Parser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/bbpackager/Arguments.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/bbpackager/Arguments.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/bbpackager/bbpackager/Entry.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,7 +76,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.installer">
+  <component name="RunManager" selected=".NET Project.bbpackager">
     <configuration name="bbpackager" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -145,7 +145,7 @@
       <workItem from="1733431666881" duration="1912000" />
       <workItem from="1733433864558" duration="75000" />
       <workItem from="1733434020811" duration="1218000" />
-      <workItem from="1733435247472" duration="7846000" />
+      <workItem from="1733435247472" duration="10320000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.0.0">
       <option name="closed" value="true" />
@@ -179,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733449904401</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="installer and updater fixes">
+      <option name="closed" value="true" />
+      <created>1733451493280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733451493280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +201,7 @@
     <MESSAGE value="created installer and updater" />
     <MESSAGE value="added update check" />
     <MESSAGE value="fixed installer and packager" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed installer and packager" />
+    <MESSAGE value="installer and updater fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="installer and updater fixes" />
   </component>
 </project>

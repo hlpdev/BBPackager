@@ -19,7 +19,7 @@ public static class Entry {
     public static async Task<int> Main(params string[] args) {
         Arguments options = null!;
         
-        Parser.Default.ParseArguments<Arguments>(args).WithParsed(void (o) => {
+        Parser.Default.ParseArguments<Arguments>(args).WithParsed(o => {
             options = o;
         });
         
@@ -188,11 +188,12 @@ public static class Entry {
 
         Logger.Verbose("Overwriting executable resource information...");
 
-#pragma warning disable CA1416
+/*#pragma warning disable CA1416
         string installPath = (Registry.LocalMachine.OpenSubKey("Software")!.OpenSubKey("bbpackager")!.GetValue("InstallPath") as string)!;
-#pragma warning restore CA1416
+#pragma warning restore CA1416*/
+        const string installPath = @"C:\Program Files (x86)\bbpackager";
 
-        Process.Start(Path.Combine(installPath, "rcedit-x86.exe"), [
+        Process rcedit = Process.Start(Path.Combine(installPath, "rcedit-x86.exe"), [
             $"\"{Path.Combine(ProjectDirectory, Project.BuildDirectory, Project.BinaryName)}\"",
             "--set-file-version", Project.Version,
             "--set-product-version", $"\"{Project.Version} {Project.Designation}\"",
@@ -200,6 +201,10 @@ public static class Entry {
             "--set-version-string", $"\"ProductName\" \"{Project.Title}\"",
             "--set-version-string", $"\"Company\" \"{Project.Company}\"",
         ]);
+        
+        Logger.Verbose($"Running rcedit with args: {rcedit.StartInfo.Arguments}");
+        
+        await rcedit.WaitForExitAsync();
 
         Logger.Log("Successfully built project!");
         
